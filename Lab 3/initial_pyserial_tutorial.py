@@ -1,4 +1,5 @@
 import serial
+import time
 
 print("Learning Pyserial")
 
@@ -8,6 +9,7 @@ ser = serial.Serial(port="/dev/ttyACM0", baudrate=19200, timeout=10) #check the 
 while not ser.is_open:
     
     time.sleep(2.0) # Necessary sometimes
+    
     ser.reset_input_buffer() # clears off old responses
     message = "RESET" # have to convert string into byte array
     message_bytes = (message + "\n").encode()
