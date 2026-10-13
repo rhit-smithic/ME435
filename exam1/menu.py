@@ -12,7 +12,6 @@ def main():
         print("2. LED OFF")
         print("3. FLASH")
 
-
         selection = int(input("Selection: "))
         if selection == 0:
             break
