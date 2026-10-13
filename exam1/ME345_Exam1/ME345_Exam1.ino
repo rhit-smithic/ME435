@@ -15,6 +15,7 @@ void setup() {
 
 void loop() {
   if (isStringComplete) {
+    inputString.trim();
     //LED ON
     if(inputString.equals("LED ON")) {
       digitalWrite(LED_BUILTIN, HIGH);
