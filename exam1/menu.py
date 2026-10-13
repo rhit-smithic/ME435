@@ -1,17 +1,17 @@
 import builtin
 
 def main():
+
+    builtinled = builtin.BuiltinLED("/dev/ttyACM1")
+    builtinled.connect()
+    
     while True:
         print("Serial Menu")
-
-        builtinled = builtin.BuiltinLED("/dev/ttyACM0")
-        builtinled.connect()
 
         print("0. Exit")
         print("1. LED ON")
         print("2. LED OFF")
         print("3. FLASH")
-
 
         selection = int(input("Selection: "))
         if selection == 0:
