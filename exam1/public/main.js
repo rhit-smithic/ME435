@@ -7,43 +7,16 @@ async function sendCommand(command) {
 }
 
 function main() {
-    document.querySelector("#reset").onclick = () => {
-        sendCommand("RESET");
+    document.querySelector("#ledon").onclick = () => {
+        sendCommand("LED ON");
     }
-    document.querySelector("#x1").onclick = () => {
-        sendCommand("X-AXIS 1");
+    document.querySelector("#ledoff").onclick = () => {
+        sendCommand("LED OFF");
     }
-    document.querySelector("#x2").onclick = () => {
-        sendCommand("X-AXIS 2");
-    }
-    document.querySelector("#x3").onclick = () => {
-        sendCommand("X-AXIS 3");
-    }
-    document.querySelector("#x4").onclick = () => {
-        sendCommand("X-AXIS 4");
-    }
-    document.querySelector("#x5").onclick = () => {
-        sendCommand("X-AXIS 5");
-    }
-    document.querySelector("#zExtend").onclick = () => {
-        sendCommand("Z-AXIS EXTEND");
-    }
-    document.querySelector("#zRetract").onclick = () => {
-        sendCommand("Z-AXIS RETRACT");
-    }
-    document.querySelector("#gripperOpen").onclick = () => {
-        sendCommand("GRIPPER OPEN");
-    }
-    document.querySelector("#gripperClose").onclick = () => {
-        sendCommand("GRIPPER CLOSE");
-    }
-    document.querySelector("#loaderStatus").onclick = () => {
-        sendCommand("LOADER_STATUS");
-    }
-    document.querySelector("#move").onclick = () => {
-        var startPos = document.querySelector("#moveFrom").value;
-        var endPos = document.querySelector("#moveTo").value;
-        sendCommand(`MOVE ${startPos} ${endPos}`);
+    document.querySelector("#flash").onclick = () => {
+        var count = document.querySelector("#count").value;
+        var period = document.querySelector("#period").value;
+        sendCommand(`FLASH ${count} ${period}`);
     }
 }
 
