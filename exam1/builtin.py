@@ -2,7 +2,7 @@ import serial
 import time
 
 class BuiltinLED:
-    def __init__(self, port="/dev/ttyACM0"):
+    def __init__(self, port="/dev/ttyACM1"):
         self.port = port #argument passed in called port
         # uses self. saves it so it doesnt go away when the call ends
         self.ser = None
