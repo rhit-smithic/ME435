@@ -1,10 +1,10 @@
-import arduino
+import builtin
 
 def main():
     while True:
         print("Serial Menu")
 
-        builtinled = arduino.BuiltinLED("/dev/ttyACM0")
+        builtinled = builtin.BuiltinLED("/dev/ttyACM0")
         builtinled.connect()
 
         print("0. Exit")
@@ -28,8 +28,8 @@ def main():
         elif selection == 3:
             count = input("Flash Count: ")
             period = input("Flash Period: ")
-            response = builtinled.send_command("FLASH " + count + period)
+            response = builtinled.send_command("FLASH " + count + " " + period)
 
-    builtinled.disconnect
+    builtinled.disconnect()
 
 main()
