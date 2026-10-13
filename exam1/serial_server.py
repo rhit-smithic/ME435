@@ -31,10 +31,10 @@ def handle_led_off():
         response = builtinled.send_command("LED OFF")
     return response
 
-@app.get("/api/flash/5/1000")
-def handle_led_flash():
+@app.get("/api/flash/<int:count>/<int:period>")
+def handle_led_flash(count, period):
     with serial_lock:
-        response = builtinled.send_command("FLASH 5 1000")
+        response = builtinled.send_command(f"FLASH {count} {period}")
     return response
 
 
