@@ -10,7 +10,7 @@ class BuiltinLED:
     def connect(self):
         if self.ser and self.ser.is_open:
             return
-        self.ser = serial.Serial(port=self.port, baudrate=19200, timeout=15) #check the com number !!! # create the object
+        self.ser = serial.Serial(port=self.port, baudrate=19200, timeout=15)
         time.sleep(2.0)
 
     def disconnect(self):
@@ -31,11 +31,11 @@ class BuiltinLED:
 
         
 if __name__ == "__main__":
-    print("Quick PlateLoader testing")
-    loader = BuiltinLED()
-    loader.connect()
-    response = loader.send_command("LED OFF")
+    ##print("Quick PlateLoader testing")
+    builtinled = BuiltinLED()
+    builtinled.connect()
+    response = builtinled.send_command("LED OFF")
     print("Response: ", response)
-    loader.disconnect()
+    builtinled.disconnect()
     
 
