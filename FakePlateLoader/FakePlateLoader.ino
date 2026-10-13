@@ -26,16 +26,19 @@ void loop() {
       delay(3000);
       Serial.println("GRIPPER CLOSED");
     
-    } else if(inputString.equals("EXTEND")) {
+    } else if(inputString.equals("Z-AXIS EXTEND")) {
       delay(3000);
       Serial.println("Z-AXIS EXTENDED");
-    } else if(inputString.equals("RETRACT")) {
+    } else if(inputString.equals("Z-AXIS RETRACT")) {
       delay(3000);
       Serial.println("Z-AXIS RETRACTED");
     
     } else if(inputString.startsWith("X-AXIS")) {
       delay(3000);
       Serial.println("READY");
+    } else if(inputString.equals("STATUS")) {
+      delay(3000);
+      Serial.println("LOADER_STATUS");
     } else {
       Serial.print("Unknown command -->");
       Serial.println(inputString);
