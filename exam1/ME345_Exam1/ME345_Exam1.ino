@@ -19,13 +19,11 @@ void loop() {
     //LED ON
     if(inputString.equals("LED ON")) {
       digitalWrite(LED_BUILTIN, HIGH);
-      delay(100);
       Serial.println("LED On");
     
     //LED OFF
     } else if(inputString.equals("LED OFF")) {
       digitalWrite(LED_BUILTIN, LOW);
-      delay(100);
       Serial.println("LED Off");
     
     //FLASHES PERIOD (ms)
