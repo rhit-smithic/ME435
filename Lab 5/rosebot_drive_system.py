@@ -1,5 +1,5 @@
 ## Naming conflicts: be careful naming class, file, and instance variables the same thing
-
+import time
 import motor
 
 class DriveSystem:
@@ -23,3 +23,8 @@ class DriveSystem:
 
     def stop(self):
         self.set_speeds(0, 0, 0, 0)
+
+    def go_straight_for_seconds(self, seconds, speed):
+        self.go(speed, speed)
+        time.sleep(seconds)
+        self.stop()
