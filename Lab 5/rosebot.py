@@ -5,7 +5,7 @@ class Rosebot:
     def __init__(self):
         ## initialize subsystems
         self.drive_sysyem = DriveSystem()
-        self.leds = None
+        self.leds = LED()
         self.ultrasonic = None
         self.line_sensors = None
         self.servo_head = None ## may not be used
